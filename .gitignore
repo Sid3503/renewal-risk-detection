@@ -30,11 +30,13 @@ MANIFEST
 # ── Testing & coverage ────────────────────────────────────────────────────────
 .pytest_cache/
 .coverage
+.coverage.*
 coverage.xml
 htmlcov/
 *.lcov
 
-# ── Type checkers ─────────────────────────────────────────────────────────────
+# ── Linters & type checkers ───────────────────────────────────────────────────
+.ruff_cache/
 .mypy_cache/
 .dmypy.json
 .pytype/

@@ -1,0 +1,121 @@
+account_id,account_name,arr,contract_end_date,plan_tier,industry,csm_name,region
+1000,Acme Corp,17000,2026-05-25,Starter,Media & Publishing,Carlos Mendez,NA-West
+1001,BrightPath Solutions,21000,2026-07-04,Starter,Travel & Hospitality,Sarah Chen,NA-East
+1002,NovaTech Industries,29000,2026-05-19,Starter,Manufacturing,Sarah Chen,LATAM
+1003,Meridian Health,193000,2026-06-12,Growth,Media & Publishing,David Kim,LATAM
+1004,Pinnacle Media Group,203000,2026-05-10,Scale,Travel & Hospitality,Raj Patel,EMEA
+1005,Vanguard Retail,106000,2026-06-02,Growth,Financial Services,James Okafor,APAC
+1006,Atlas Financial,39000,2026-06-03,Starter,Government,Emily Watson,NA-East
+1007,Zenith Publishing,1625000,2026-05-05,Enterprise,Travel & Hospitality,James Okafor,LATAM
+1008,Crescent Labs,390000,2026-07-02,Scale,Media & Publishing,James Okafor,NA-East
+1009,Orion Education,126000,2026-04-30,Growth,Media & Publishing,James Okafor,APAC
+1010,TerraFirma Manufacturing,438000,2026-07-10,Scale,SaaS / Technology,Priya Sharma,EMEA
+1011,Skyline Travel,310000,2026-05-24,Scale,Financial Services,Priya Sharma,LATAM
+1012,Quantum Commerce,93000,2026-06-18,Growth,Travel & Hospitality,Emily Watson,LATAM
+1013,RedLeaf Healthcare,135000,2026-04-27,Growth,Media & Publishing,Sarah Chen,EMEA
+1014,BluePeak Software,1061000,2026-04-28,Enterprise,Media & Publishing,Raj Patel,NA-West
+1015,Evergreen Media,1330000,2026-07-11,Enterprise,Education,Priya Sharma,EMEA
+1016,Northstar Logistics,115000,2026-06-30,Growth,Manufacturing,Emily Watson,LATAM
+1017,Pacific Rim Trading,1724000,2026-06-10,Enterprise,SaaS / Technology,Carlos Mendez,NA-West
+1018,Ironclad Security,691000,2026-04-26,Enterprise,Financial Services,Priya Sharma,NA-West
+1019,Summit Analytics,1751000,2026-04-28,Enterprise,Travel & Hospitality,Anna Kowalski,LATAM
+1020,Coral Bay Resorts,1610000,2026-05-22,Enterprise,Manufacturing,Sarah Chen,NA-East
+1021,Falcon Aerospace,378000,2026-05-04,Scale,Retail,Anna Kowalski,NA-West
+1022,Jade River Tech,507000,2026-05-23,Enterprise,Manufacturing,Priya Sharma,LATAM
+1023,Mosaic Digital,35000,2026-07-10,Starter,Manufacturing,Carlos Mendez,NA-West
+1024,Beacon Insurance,285000,2026-06-28,Scale,Manufacturing,Sarah Chen,LATAM
+1025,Tidal Wave Sports,456000,2026-04-22,Scale,Financial Services,Raj Patel,EMEA
+1026,Golden Gate Ventures,65000,2026-05-20,Growth,Government,James Okafor,NA-East
+1027,Cedar Hill Partners,645000,2026-06-27,Enterprise,Healthcare,Priya Sharma,APAC
+1028,Arctic Fox Games,119000,2026-06-26,Growth,Government,Anna Kowalski,NA-West
+1029,Sapphire Networks,132000,2026-06-10,Growth,SaaS / Technology,David Kim,LATAM
+1030,Ember Creative,754000,2026-11-18,Enterprise,Media & Publishing,James Okafor,EMEA
+1031,Prism Optics,30000,2026-11-04,Starter,E-commerce,James Okafor,NA-East
+1032,Obsidian Data,68000,2026-07-31,Growth,SaaS / Technology,James Okafor,LATAM
+1033,Silver Lining Cloud,123000,2027-03-20,Growth,Media & Publishing,Priya Sharma,LATAM
+1034,Marble Arch Media,1010000,2027-03-14,Enterprise,Travel & Hospitality,Carlos Mendez,NA-East
+1035,Velvet Rope Events,43000,2027-01-12,Starter,Travel & Hospitality,Anna Kowalski,APAC
+1036,Iron Bridge Capital,21000,2026-08-15,Starter,Travel & Hospitality,Raj Patel,NA-East
+1037,Crystal Clear Analytics,100000,2026-10-20,Growth,Manufacturing,David Kim,NA-West
+1038,Opal Systems,885000,2026-12-04,Enterprise,Education,Carlos Mendez,NA-East
+1039,Redwood Health,1654000,2026-09-03,Enterprise,E-commerce,Sarah Chen,NA-East
+1040,Cobalt Robotics,94000,2027-02-08,Growth,Education,David Kim,NA-West
+1041,Amber Trail Outdoors,623000,2026-10-07,Enterprise,Travel & Hospitality,Sarah Chen,APAC
+1042,Granite Peak Financial,439000,2026-12-08,Scale,Travel & Hospitality,David Kim,NA-West
+1043,Sunflower Foods,128000,2026-11-03,Growth,E-commerce,Sarah Chen,EMEA
+1044,Neon Pixel Studios,18000,2027-03-16,Starter,Manufacturing,Priya Sharma,NA-East
+1045,Windmill Energy,27000,2026-08-19,Starter,Government,James Okafor,NA-West
+1046,Onyx Defense,751000,2026-11-18,Enterprise,Government,Sarah Chen,LATAM
+1047,Topaz AI,42000,2027-04-08,Starter,SaaS / Technology,Emily Watson,NA-West
+1048,Lunar Dynamics,325000,2026-11-27,Scale,Travel & Hospitality,Priya Sharma,EMEA
+1049,Fossil Creek Ranch,1163000,2026-08-21,Enterprise,E-commerce,David Kim,LATAM
+1050,Delta Wave Audio,20000,2026-11-01,Starter,Manufacturing,Emily Watson,NA-West
+1051,Ivory Tower Education,236000,2026-11-17,Scale,SaaS / Technology,Emily Watson,NA-West
+1052,Crimson Tide Logistics,1639000,2026-12-16,Enterprise,Government,Sarah Chen,LATAM
+1053,Cerulean Aerospace,254000,2026-09-21,Scale,Retail,James Okafor,NA-East
+1054,Olive Branch Organics,121000,2026-12-06,Growth,Government,Carlos Mendez,EMEA
+1055,Starlight Entertainment,119000,2027-03-30,Growth,Education,Emily Watson,NA-East
+1056,Thunderbolt Motors,43000,2026-12-03,Starter,E-commerce,Sarah Chen,EMEA
+1057,Pearl Harbor Memorial Trust,119000,2026-10-05,Growth,Education,Anna Kowalski,LATAM
+1058,Magenta Health,22000,2026-08-22,Starter,Healthcare,Sarah Chen,EMEA
+1059,Cobblestone Properties,163000,2026-09-18,Growth,E-commerce,Emily Watson,EMEA
+1060,Titanium Fitness,38000,2026-10-30,Starter,Media & Publishing,James Okafor,EMEA
+1061,Flamingo Travel,1802000,2026-10-02,Enterprise,Media & Publishing,Priya Sharma,NA-West
+1062,Driftwood Publishing,552000,2026-10-14,Enterprise,SaaS / Technology,Anna Kowalski,NA-West
+1063,Canyon Edge Adventures,283000,2026-09-08,Scale,Travel & Hospitality,Sarah Chen,APAC
+1064,Eclipse Software,102000,2027-03-07,Growth,SaaS / Technology,Emily Watson,NA-West
+1065,Harbor Light Consulting,56000,2026-10-21,Growth,Travel & Hospitality,Raj Patel,EMEA
+1066,Willow Creek Farms,33000,2027-01-10,Starter,Manufacturing,Anna Kowalski,LATAM
+1067,Stormfront Weather Systems,214000,2026-09-12,Scale,Retail,Priya Sharma,LATAM
+1068,Keystone Education Group,220000,2026-09-08,Scale,Government,Anna Kowalski,EMEA
+1069,Catalyst Innovations,429000,2027-04-02,Scale,Financial Services,Anna Kowalski,LATAM
+1070,Mirage Digital Agency,117000,2026-08-06,Growth,Travel & Hospitality,Sarah Chen,LATAM
+1071,Polaris Navigation,145000,2027-02-20,Growth,Financial Services,Raj Patel,LATAM
+1072,Sandcastle Hospitality,265000,2026-12-15,Scale,Manufacturing,Emily Watson,APAC
+1073,Foxglove Pharmaceuticals,411000,2026-12-13,Scale,Manufacturing,Priya Sharma,NA-West
+1074,Ironwood Manufacturing,1894000,2027-01-25,Enterprise,Healthcare,Emily Watson,APAC
+1075,Ripple Effect Marketing,35000,2026-12-08,Starter,Media & Publishing,Anna Kowalski,LATAM
+1076,Basecamp Outdoors,444000,2027-02-26,Scale,Education,Carlos Mendez,LATAM
+1077,Comet Data Sciences,856000,2026-08-27,Enterprise,Retail,Raj Patel,NA-East
+1078,Trailhead Analytics,131000,2026-11-07,Growth,Media & Publishing,Priya Sharma,NA-East
+1079,Spectrum Health Network,31000,2027-03-15,Starter,Government,James Okafor,APAC
+1080,Nightfall Security,1821000,2026-10-22,Enterprise,Travel & Hospitality,David Kim,APAC
+1081,Daybreak Solar,89000,2026-07-17,Growth,Financial Services,Anna Kowalski,NA-West
+1082,Frostbite Gaming,186000,2027-03-09,Growth,E-commerce,Carlos Mendez,NA-East
+1083,Pebble Stream Media,780000,2027-03-09,Enterprise,Manufacturing,Raj Patel,APAC
+1084,Wildfire Creative,1649000,2027-02-28,Enterprise,Healthcare,David Kim,APAC
+1085,Anchor Point Financial,330000,2026-12-03,Scale,Manufacturing,David Kim,NA-West
+1086,Starboard Ventures,431000,2026-08-23,Scale,Retail,Carlos Mendez,EMEA
+1087,Quicksilver Payments,368000,2026-08-25,Scale,Healthcare,Priya Sharma,NA-West
+1088,Hearthstone Properties,1955000,2026-10-01,Enterprise,Media & Publishing,James Okafor,APAC
+1089,Thunderpeak Mining,1194000,2027-03-10,Enterprise,Travel & Hospitality,Sarah Chen,NA-West
+1090,Bluebell Organics,1317000,2026-07-25,Enterprise,Government,Anna Kowalski,APAC
+1091,Cascadia Tech,38000,2026-12-14,Starter,Travel & Hospitality,Anna Kowalski,LATAM
+1092,Silverthorn Consulting,178000,2026-11-04,Growth,Retail,Anna Kowalski,APAC
+1093,Redstone Engineering,40000,2027-01-03,Starter,Travel & Hospitality,Priya Sharma,APAC
+1094,Cloudbreak Surf Co,190000,2026-07-28,Growth,Travel & Hospitality,Sarah Chen,NA-East
+1095,Copperfield Education,785000,2027-03-08,Enterprise,Healthcare,Sarah Chen,EMEA
+1096,Everest Data,1187000,2026-10-31,Enterprise,Education,Raj Patel,EMEA
+1097,Icefall Analytics,1084000,2027-02-15,Enterprise,Retail,James Okafor,APAC
+1098,Magnolia Health Systems,18000,2027-01-10,Starter,Media & Publishing,James Okafor,NA-East
+1099,Oakridge Retail,31000,2026-10-25,Starter,E-commerce,Priya Sharma,NA-West
+1100,Seabreeze Hospitality,174000,2026-09-11,Growth,Government,Carlos Mendez,APAC
+1101,Blackthorn Security,393000,2026-10-08,Scale,Government,James Okafor,NA-West
+1102,Goldrush Fintech,257000,2026-07-28,Scale,Retail,Anna Kowalski,APAC
+1103,Moonrise Studios,70000,2026-11-16,Growth,Financial Services,Emily Watson,LATAM
+1104,Timberwolf Logistics,18000,2027-01-08,Starter,Manufacturing,Anna Kowalski,EMEA
+1105,Ferndale Publishing,48000,2027-01-05,Starter,E-commerce,Anna Kowalski,APAC
+1106,Stonebridge Capital,43000,2027-01-16,Starter,Education,Priya Sharma,APAC
+1107,Ravenswood Media,187000,2026-11-30,Growth,Government,David Kim,APAC
+1108,Clearwater Systems,1743000,2026-11-29,Enterprise,SaaS / Technology,Carlos Mendez,NA-East
+1109,Pinehurst Golf Tech,436000,2026-11-16,Scale,Education,Anna Kowalski,EMEA
+1110,Dewdrop Organic Foods,47000,2026-12-28,Starter,Healthcare,David Kim,NA-West
+1111,Firestorm Marketing,335000,2027-01-05,Scale,Retail,Emily Watson,LATAM
+1112,Stargazer Telescopes,49000,2026-10-20,Starter,Financial Services,Carlos Mendez,APAC
+1113,Whitewater Adventures,1664000,2026-11-15,Enterprise,Education,David Kim,APAC
+1114,Rosewood Hotels,21000,2026-12-12,Starter,Media & Publishing,Anna Kowalski,NA-West
+1115,Sapwood Furniture Co,393000,2027-03-14,Scale,Manufacturing,Raj Patel,APAC
+1116,Thunderhead Cloud,384000,2027-03-04,Scale,Retail,Emily Watson,EMEA
+1117,Marshland Conservation,82000,2026-10-21,Growth,SaaS / Technology,James Okafor,LATAM
+1118,Ridgeline Software,100000,2026-11-02,Growth,Education,Emily Watson,LATAM
+1119,Sunstone Energy,253000,2026-10-22,Scale,Retail,Carlos Mendez,EMEA

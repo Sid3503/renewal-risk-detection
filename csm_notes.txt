@@ -1,0 +1,201 @@
+=== CSM Call Notes — Q1 2026 ===
+(Internal use only. Various CSMs.)
+
+Mar 12 - Talked to Acme Corp. They're frustrated with the new editor. 
+Might be evaluating Hygraph. VP of Engineering was on the call which is unusual.
+They mentioned their contract is coming up and want to "explore options." Sarah flagged
+this internally but hasn't heard back from leadership.
+
+---
+
+3/15 acct 1001 - BritePath Solutions (sic) call. No show for the third 
+time this quarter. Their admin told me the team has been pulled into a CMS evaluation 
+project led by their CTO. Budget was cut 20% across all SaaS vendors.
+
+---
+
+2026-03-20 | NovaTech Industries | James O.
+Extremely tense call. They've had 4 P1 tickets in the last month, all related to the 
+v3 SDK deprecation. Their engineering team spent 200+ hours on workarounds. CTO 
+joined the call and asked point blank if we have a migration path. I said we do but 
+couldn't give a timeline. They mentioned Strapi and Sanity by name. Need to escalate.
+
+---
+
+march 25 -- meridian health -- priya
+Good news/bad news. NPS came back at 8 (decent) but their actual usage has cratered.
+Turns out they built a custom middleware layer and are slowly moving content to a 
+homegrown solution. The score reflects the *people* like our support team, not that 
+they plan to stay. Classic silent churn pattern. VP of Digital was on the last call 
+and asked about data export APIs.
+
+---
+
+3/28 Pinacle Media (acct 1004)
+They're fine on the product side but the billing team is furious about the mid-cycle 
+price increase. Threatened to go to Contentful. I've offered to set up a call with 
+our finance team but they haven't responded. Two missed QBRs in a row.
+
+---
+
+Apr 1 - vanguard retail
+just a quick note: they've stopped using workflows entirely since the Feb update broke
+their automation. they filed a ticket but it's been open for 6 weeks. the ops manager 
+told me she's "lost faith in the roadmap." she used to be our biggest champion there.
+
+---
+
+04/03 Atlas Financial
+Quarterly business review went poorly. They brought their CISO and asked about our 
+SOC 2 audit timeline (we're behind). Also asked about single-tenancy options which 
+we don't offer on their current plan. They're in a regulated industry so this is a 
+dealbreaker if we can't address it. Also on SDK v3.1 and hitting the deprecated 
+endpoints daily.
+
+---
+
+4/5 - Zenith Publishing (#1007)
+Renewl conversation started. They want a 30% discount or they walk. Current ARR is 
+high but margin is already thin. Editor performance on their 50k+ entry library is 
+painful and they know it. Competitor POC with Kontent.ai is apparently already underway.
+CRO was cc'd on the last email thread which is never a good sign.
+
+---
+
+3/10 - crescent labs
+Happy with the product overall but their new VP of Marketing wants to see an ROI 
+report before signing off on renewal. Asked for case studies in their vertical 
+(biotech). We don't have any ready. I need to work with marketing on this.
+Usage is stable but not growing.
+
+---
+
+3/18 orion education (1009)
+They love the product but are merging with another ed-tech company that uses WordPress.
+Unclear which platform survives. Decision expected by May. Their champion (Director 
+of Content) is nervous about her own role post-merger. She's been our main advocate.
+
+---
+
+march 22 TerraFirma Manufacturing
+Had a call. They're interested in the new Agent OS features once it GAs. Want to be 
+in the early access program. But their current implementation is a mess -- they 
+never finished the original migration from Drupal 18 months ago. Half their content 
+is still on the old system. Might not renew unless we can give them a dedicated SA 
+for 2 weeks to clean it up.
+
+---
+
+3/26 skyline travel (1011)
+They're expanding internationally which is great, but struggling with our locale 
+management. Filed 3 tickets about locale fallback behavior. On SDK v4.0 so they 
+missed the fix in v4.2. Could go either way on renewal. They asked to talk to PM.
+
+---
+
+April 2 - Quantum Commerce 
+renewal call scheduled for next week. They want to add 20 seats but only if we 
+can match a competing offer from builder.io at $X/seat. Currently on Growth plan. 
+API usage is actually up 40% MoM which is good leverage for us.
+
+---
+
+4/4 RedLeaf Healthcare
+Compliance audit coming up. They need us to fill out a vendor security questionnaire 
+by May 15 or they can't renew (company policy). I submitted the request to our 
+security team on 3/20 but haven't gotten a response. This is time-sensitive.
+
+---
+
+04/07 bluepeak software
+They're a developer-heavy team and love the DX of our APIs but hate the management 
+console UI. Their VP of Product called it "embarrassing to demo to stakeholders."
+They renewed last year with reluctance. On the fence this time. NPS was 6.
+
+---
+
+4/8 evergreen media 1015
+Product is fine, team is fine, but their parent company got acquired and all vendor 
+contracts are under review. New procurement team is asking for enterprise-level 
+SLAs on their Growth plan pricing. It's a negotiation game.
+
+---
+
+4/9 Northstar Logistics
+account 1016 -- they barely use the product. 2 active users out of 15 seats. 
+most content was migrated but nobody adopted the new workflow. classic 
+shelfware situation. Their IT director told me they'd rather downgrade to Starter 
+than pay full price for something they don't use. not churn per se but 
+significant ARR contraction risk.
+
+---
+
+4/10 pacific rim trading (1017)
+mixed signals. usage metrics look healthy but the CSM relationship has been rocky.
+they've requested a new CSM twice. their last NPS comment was in mandarin so i 
+couldn't read it -- need to get it translated. contract up in may.
+
+---
+
+3/15 acct 1042 - all good, expanding to APAC team next quarter. 
+loves the product. renewal is a formality according to their VP of Eng.
+
+---
+
+3/20 ironclad security
+just closed a great QBR. They want to add 30 more seats and upgrade to Enterprise.
+Already got budget approval. renewal + expansion coming in May. champagne time.
+
+---
+
+3/22 summit analytics - routine check-in. everything is green. 
+their dev team contributed a community plugin last month. true believers.
+
+---
+
+04/01 coral bay resorts
+Smooth sailing. They're launching 3 new properties this summer and want us to power 
+all the new sites. Renewal is locked in with a 2-year extension. CSM relationship 
+is excellent.
+
+---
+
+4/3 falcon aerospace
+defense/aero customer so everything is slow and bureaucratic but their PO for renewal 
+was submitted to procurement in January. should be finalized by end of April. 
+No concerns from their side.
+
+---
+
+3/28 jade river tech
+Random ping from their developer asking about GraphQL introspection. Non-renewal 
+related. They're deep in implementation. All good.
+
+---
+
+4/5 - mosaic digital
+They want to integrate with Shopify Plus. Asked about marketplace connectors.
+Renewal isn't until December so no rush but good engagement.
+
+---
+
+04/08 beacon insurance (acct 1024)
+annual check-in. They're regulated so they move slow but steady. renewal 
+isn't until Q4. No concerns, just maintaining the relationship.
+
+---
+
+4/10 - note for account 1099 (Harbourside Dining I think?)
+They called to ask about our GDPR data processing agreement update. Routine 
+request but they seemed annoyed it took 2 weeks last time. Quick turnaround 
+needed. -- Emily W.
+
+---
+
+march 30 - Thunderbolt Moters 
+Quick sync. They're evaluating adding headless commerce to their dealer sites.
+Interested in the new composable architecture docs. Positive conversation overall.
+No renewal risk but need to send them the technical brief by EOW.
+
+---
+

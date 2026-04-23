@@ -1,0 +1,272 @@
+account_id,ticket_id,created_date,subject,description,priority,resolution_time_hours,status
+1000,TKT-5001,2026-01-08,Webhook delivery delays,Webhook delivery delays. Customer requesting immediate escalation to engineering.,P1,,Open
+1000,TKT-5002,2025-11-13,Locale fallback not working,Customer reports locale fallback not working affecting their production environment.,P1,79.7,Resolved
+1000,TKT-5003,2026-02-16,Content sync failures,Content sync failures. Customer requesting immediate escalation to engineering.,P3,47.1,Open
+1000,TKT-5004,2026-03-02,Release preview environment setup,Minor issue with release preview environment setup. Customer happy with workaround for now.,P2,87.3,Resolved
+1000,TKT-5005,2026-02-01,Marketplace app compatibility issue,Blocking issue. Marketplace app compatibility issue. Customer says this is impacting go-live timeline.,P2,69.6,Escalated
+1000,TKT-5006,2025-12-17,Locale fallback not working,Customer reports locale fallback not working affecting their production environment.,P3,51.5,Resolved
+1000,TKT-5007,2026-02-14,API rate limiting issues,Customer reports api rate limiting issues affecting their production environment.,P2,26.7,Resolved
+1001,TKT-5008,2025-10-02,Content scheduling timezone bug,Blocking issue. Content scheduling timezone bug. Customer says this is impacting go-live timeline.,P1,98.2,Open
+1001,TKT-5009,2026-04-02,CDN cache invalidation delays,Minor issue with cdn cache invalidation delays. Customer happy with workaround for now.,P1,59.2,Resolved
+1001,TKT-5010,2026-02-10,Role permissions not applying correctly,Blocking issue. Role permissions not applying correctly. Customer says this is impacting go-live timeline.,P1,,Open
+1001,TKT-5011,2025-10-18,Workflow automation broken after update,Recurring issue: workflow automation broken after update. Third time reporting this month.,P1,99.4,Open
+1001,TKT-5012,2026-03-09,Migration from legacy editor,Minor issue with migration from legacy editor. Customer happy with workaround for now.,P1,78.7,Resolved
+1001,TKT-5013,2025-10-06,Performance degradation on publish,Recurring issue: performance degradation on publish. Third time reporting this month.,P2,,Escalated
+1001,TKT-5014,2025-10-03,Webhook delivery delays,Recurring issue: webhook delivery delays. Third time reporting this month.,P1,,Open
+1001,TKT-5015,2026-02-05,SSO configuration help,SSO configuration help. Customer requesting immediate escalation to engineering.,P1,48.9,Resolved
+1001,TKT-5016,2026-04-11,New editor crash on Safari,Recurring issue: new editor crash on safari. Third time reporting this month.,P3,,Resolved
+1001,TKT-5017,2025-12-04,Content sync failures,Minor issue with content sync failures. Customer happy with workaround for now.,P1,70.7,Resolved
+1001,TKT-5018,2026-01-22,API rate limiting issues,Recurring issue: api rate limiting issues. Third time reporting this month.,P1,38.9,Escalated
+1001,TKT-5019,2025-11-23,Content sync failures,Minor issue with content sync failures. Customer happy with workaround for now.,P1,22.1,Open
+1001,TKT-5020,2025-10-11,Role permissions not applying correctly,Blocking issue. Role permissions not applying correctly. Customer says this is impacting go-live timeline.,P3,46.9,Open
+1002,TKT-5021,2026-03-20,Webhook delivery delays,Recurring issue: webhook delivery delays. Third time reporting this month.,P1,33.5,Escalated
+1002,TKT-5022,2026-02-27,Webhook delivery delays,Customer reports webhook delivery delays affecting their production environment.,P1,13.6,Escalated
+1002,TKT-5023,2026-03-26,Role permissions not applying correctly,Minor issue with role permissions not applying correctly. Customer happy with workaround for now.,P3,,Resolved
+1002,TKT-5024,2026-03-25,Audit log missing entries,Blocking issue. Audit log missing entries. Customer says this is impacting go-live timeline.,P1,38.9,Open
+1002,TKT-5025,2026-03-15,GraphQL query timeout,Recurring issue: graphql query timeout. Third time reporting this month.,P4,79.5,Resolved
+1002,TKT-5026,2026-02-20,Release preview environment setup,Release preview environment setup. Customer requesting immediate escalation to engineering.,P3,,Resolved
+1002,TKT-5027,2026-04-04,New editor crash on Safari,Recurring issue: new editor crash on safari. Third time reporting this month.,P3,,Resolved
+1002,TKT-5028,2026-03-28,Workflow automation broken after update,Minor issue with workflow automation broken after update. Customer happy with workaround for now.,P3,59.3,Resolved
+1002,TKT-5029,2026-03-03,Performance degradation on publish,Blocking issue. Performance degradation on publish. Customer says this is impacting go-live timeline.,P2,47.0,Open
+1002,TKT-5030,2025-12-07,SDK upgrade guidance,Blocking issue. SDK upgrade guidance. Customer says this is impacting go-live timeline.,P1,,Resolved
+1002,TKT-5031,2025-10-05,CDN cache invalidation delays,Blocking issue. CDN cache invalidation delays. Customer says this is impacting go-live timeline.,P2,66.6,Open
+1002,TKT-5032,2026-03-18,CDN cache invalidation delays,Blocking issue. CDN cache invalidation delays. Customer says this is impacting go-live timeline.,P3,,Open
+1002,TKT-5033,2025-12-12,Role permissions not applying correctly,Role permissions not applying correctly. Customer requesting immediate escalation to engineering.,P1,94.7,Resolved
+1002,TKT-5034,2025-10-18,Bulk import failing for large datasets,Customer reports bulk import failing for large datasets affecting their production environment.,P2,,Open
+1003,TKT-5035,2025-10-26,SDK upgrade guidance,Customer reports sdk upgrade guidance affecting their production environment.,P3,,Open
+1003,TKT-5036,2026-03-01,Marketplace app compatibility issue,Marketplace app compatibility issue. Customer requesting immediate escalation to engineering.,P2,64.9,Open
+1003,TKT-5037,2025-11-23,Content sync failures,Minor issue with content sync failures. Customer happy with workaround for now.,P2,19.7,Escalated
+1003,TKT-5038,2026-01-15,SSO configuration help,SSO configuration help. Customer requesting immediate escalation to engineering.,P2,51.0,Open
+1003,TKT-5039,2025-12-17,Content sync failures,Customer reports content sync failures affecting their production environment.,P3,16.4,Resolved
+1003,TKT-5040,2026-02-14,Performance degradation on publish,Minor issue with performance degradation on publish. Customer happy with workaround for now.,P4,,Open
+1003,TKT-5041,2026-02-20,Performance degradation on publish,Blocking issue. Performance degradation on publish. Customer says this is impacting go-live timeline.,P1,73.6,Escalated
+1003,TKT-5042,2026-03-29,Bulk import failing for large datasets,Minor issue with bulk import failing for large datasets. Customer happy with workaround for now.,P3,74.3,Open
+1004,TKT-5043,2026-02-14,SDK upgrade guidance,Blocking issue. SDK upgrade guidance. Customer says this is impacting go-live timeline.,P3,66.5,Open
+1004,TKT-5044,2026-01-04,New editor crash on Safari,Minor issue with new editor crash on safari. Customer happy with workaround for now.,P4,71.4,Escalated
+1004,TKT-5045,2026-01-05,Bulk import failing for large datasets,Blocking issue. Bulk import failing for large datasets. Customer says this is impacting go-live timeline.,P3,38.0,Open
+1004,TKT-5046,2025-10-09,Workflow automation broken after update,Workflow automation broken after update. Customer requesting immediate escalation to engineering.,P2,115.7,Resolved
+1004,TKT-5047,2025-10-02,Audit log missing entries,Audit log missing entries. Customer requesting immediate escalation to engineering.,P1,,Escalated
+1004,TKT-5048,2025-12-10,Locale fallback not working,Blocking issue. Locale fallback not working. Customer says this is impacting go-live timeline.,P1,95.3,Escalated
+1004,TKT-5049,2025-12-31,REST API deprecation migration,Recurring issue: rest api deprecation migration. Third time reporting this month.,P2,28.7,Resolved
+1005,TKT-5050,2025-10-24,Workflow automation broken after update,Blocking issue. Workflow automation broken after update. Customer says this is impacting go-live timeline.,P2,37.2,Escalated
+1005,TKT-5051,2025-12-23,Role permissions not applying correctly,Minor issue with role permissions not applying correctly. Customer happy with workaround for now.,P2,,Resolved
+1005,TKT-5052,2025-10-25,SDK upgrade guidance,Blocking issue. SDK upgrade guidance. Customer says this is impacting go-live timeline.,P2,87.9,Escalated
+1005,TKT-5053,2025-12-25,Custom field rendering issue,Custom field rendering issue. Customer requesting immediate escalation to engineering.,P1,53.2,Escalated
+1005,TKT-5054,2026-03-17,Bulk import failing for large datasets,Blocking issue. Bulk import failing for large datasets. Customer says this is impacting go-live timeline.,P2,105.9,Resolved
+1005,TKT-5055,2025-12-21,API rate limiting issues,Blocking issue. API rate limiting issues. Customer says this is impacting go-live timeline.,P2,17.8,Open
+1005,TKT-5056,2026-04-06,Marketplace app compatibility issue,Minor issue with marketplace app compatibility issue. Customer happy with workaround for now.,P1,35.8,Resolved
+1005,TKT-5057,2026-01-09,New editor crash on Safari,Recurring issue: new editor crash on safari. Third time reporting this month.,P3,21.7,Open
+1006,TKT-5058,2025-10-22,GraphQL query timeout,Minor issue with graphql query timeout. Customer happy with workaround for now.,P1,17.3,Resolved
+1006,TKT-5059,2025-11-20,REST API deprecation migration,Minor issue with rest api deprecation migration. Customer happy with workaround for now.,P2,94.3,Open
+1006,TKT-5060,2026-04-07,Role permissions not applying correctly,Blocking issue. Role permissions not applying correctly. Customer says this is impacting go-live timeline.,P3,,Open
+1006,TKT-5061,2026-02-25,Locale fallback not working,Customer reports locale fallback not working affecting their production environment.,P1,58.4,Open
+1006,TKT-5062,2026-03-02,Webhook delivery delays,Customer reports webhook delivery delays affecting their production environment.,P3,49.6,Resolved
+1006,TKT-5063,2026-03-09,Custom field rendering issue,Recurring issue: custom field rendering issue. Third time reporting this month.,P1,100.7,Escalated
+1006,TKT-5064,2026-04-12,New editor crash on Safari,Customer reports new editor crash on safari affecting their production environment.,P1,33.6,Resolved
+1006,TKT-5065,2025-11-07,Webhook delivery delays,Webhook delivery delays. Customer requesting immediate escalation to engineering.,P3,,Open
+1007,TKT-5066,2025-10-06,GraphQL query timeout,GraphQL query timeout. Customer requesting immediate escalation to engineering.,P3,,Open
+1007,TKT-5067,2026-04-11,Performance degradation on publish,Performance degradation on publish. Customer requesting immediate escalation to engineering.,P3,,Open
+1007,TKT-5068,2025-10-05,Release preview environment setup,Minor issue with release preview environment setup. Customer happy with workaround for now.,P2,27.3,Open
+1007,TKT-5069,2025-11-21,Marketplace app compatibility issue,Blocking issue. Marketplace app compatibility issue. Customer says this is impacting go-live timeline.,P4,39.6,Resolved
+1007,TKT-5070,2025-12-09,Workflow automation broken after update,Workflow automation broken after update. Customer requesting immediate escalation to engineering.,P1,12.9,Resolved
+1007,TKT-5071,2026-01-06,Webhook delivery delays,Blocking issue. Webhook delivery delays. Customer says this is impacting go-live timeline.,P1,82.1,Resolved
+1008,TKT-5072,2026-01-26,GraphQL query timeout,Blocking issue. GraphQL query timeout. Customer says this is impacting go-live timeline.,P3,7.9,Resolved
+1008,TKT-5073,2026-04-09,API rate limiting issues,Recurring issue: api rate limiting issues. Third time reporting this month.,P1,17.4,Resolved
+1008,TKT-5074,2026-02-06,API rate limiting issues,API rate limiting issues. Customer requesting immediate escalation to engineering.,P2,31.5,Resolved
+1009,TKT-5075,2026-02-20,Workflow automation broken after update,Workflow automation broken after update. Customer requesting immediate escalation to engineering.,P4,39.9,Resolved
+1009,TKT-5076,2026-01-06,Locale fallback not working,Blocking issue. Locale fallback not working. Customer says this is impacting go-live timeline.,P2,32.9,Resolved
+1009,TKT-5077,2026-01-18,Audit log missing entries,Audit log missing entries. Customer requesting immediate escalation to engineering.,P4,22.4,Resolved
+1010,TKT-5078,2026-03-25,GraphQL query timeout,Recurring issue: graphql query timeout. Third time reporting this month.,P3,32.7,Resolved
+1010,TKT-5079,2025-11-07,Migration from legacy editor,Blocking issue. Migration from legacy editor. Customer says this is impacting go-live timeline.,P2,27.0,Resolved
+1010,TKT-5080,2025-12-21,SDK upgrade guidance,Recurring issue: sdk upgrade guidance. Third time reporting this month.,P2,45.7,Resolved
+1010,TKT-5081,2026-01-22,API rate limiting issues,API rate limiting issues. Customer requesting immediate escalation to engineering.,P4,22.2,Resolved
+1010,TKT-5082,2026-03-06,Migration from legacy editor,Blocking issue. Migration from legacy editor. Customer says this is impacting go-live timeline.,P4,12.1,Open
+1010,TKT-5083,2025-10-07,Workflow automation broken after update,Workflow automation broken after update. Customer requesting immediate escalation to engineering.,P3,30.2,Resolved
+1010,TKT-5084,2026-04-01,SSO configuration help,SSO configuration help. Customer requesting immediate escalation to engineering.,P3,26.1,Resolved
+1011,TKT-5085,2026-04-14,Role permissions not applying correctly,Customer reports role permissions not applying correctly affecting their production environment.,P3,12.5,Resolved
+1011,TKT-5086,2025-11-22,Workflow automation broken after update,Customer reports workflow automation broken after update affecting their production environment.,P4,33.5,Resolved
+1011,TKT-5087,2025-12-23,SDK upgrade guidance,Minor issue with sdk upgrade guidance. Customer happy with workaround for now.,P4,42.2,Resolved
+1011,TKT-5088,2026-04-03,Locale fallback not working,Locale fallback not working. Customer requesting immediate escalation to engineering.,P3,30.7,Open
+1012,TKT-5089,2026-03-30,Audit log missing entries,Customer reports audit log missing entries affecting their production environment.,P4,27.6,Resolved
+1012,TKT-5090,2025-12-02,REST API deprecation migration,Blocking issue. REST API deprecation migration. Customer says this is impacting go-live timeline.,P2,42.6,Open
+1012,TKT-5091,2026-03-11,Release preview environment setup,Customer reports release preview environment setup affecting their production environment.,P3,28.5,Resolved
+1012,TKT-5092,2026-01-27,Performance degradation on publish,Recurring issue: performance degradation on publish. Third time reporting this month.,P2,17.4,Open
+1012,TKT-5093,2026-01-27,Bulk import failing for large datasets,Minor issue with bulk import failing for large datasets. Customer happy with workaround for now.,P2,34.4,Escalated
+1012,TKT-5094,2026-03-28,SSO configuration help,Blocking issue. SSO configuration help. Customer says this is impacting go-live timeline.,P3,38.3,Escalated
+1013,TKT-5095,2026-04-01,Role permissions not applying correctly,Recurring issue: role permissions not applying correctly. Third time reporting this month.,P3,11.9,Resolved
+1013,TKT-5096,2025-11-11,New editor crash on Safari,Customer reports new editor crash on safari affecting their production environment.,P1,32.5,Open
+1013,TKT-5097,2026-01-07,SSO configuration help,Blocking issue. SSO configuration help. Customer says this is impacting go-live timeline.,P2,20.0,Resolved
+1013,TKT-5098,2025-12-25,Audit log missing entries,Blocking issue. Audit log missing entries. Customer says this is impacting go-live timeline.,P4,20.7,Open
+1014,TKT-5099,2025-12-19,SDK upgrade guidance,Minor issue with sdk upgrade guidance. Customer happy with workaround for now.,P4,35.3,Resolved
+1014,TKT-5100,2026-03-09,Custom field rendering issue,Custom field rendering issue. Customer requesting immediate escalation to engineering.,P3,9.8,Resolved
+1014,TKT-5101,2026-02-04,API rate limiting issues,Recurring issue: api rate limiting issues. Third time reporting this month.,P3,27.9,Resolved
+1014,TKT-5102,2026-03-03,Performance degradation on publish,Customer reports performance degradation on publish affecting their production environment.,P3,22.0,Resolved
+1015,TKT-5103,2025-11-17,Release preview environment setup,Recurring issue: release preview environment setup. Third time reporting this month.,P2,40.1,Resolved
+1015,TKT-5104,2026-03-20,Content sync failures,Blocking issue. Content sync failures. Customer says this is impacting go-live timeline.,P3,,Open
+1015,TKT-5105,2025-11-15,Audit log missing entries,Recurring issue: audit log missing entries. Third time reporting this month.,P2,6.2,Resolved
+1015,TKT-5106,2025-11-15,Custom field rendering issue,Minor issue with custom field rendering issue. Customer happy with workaround for now.,P3,30.2,Open
+1016,TKT-5107,2026-01-03,CDN cache invalidation delays,Minor issue with cdn cache invalidation delays. Customer happy with workaround for now.,P4,,Resolved
+1016,TKT-5108,2025-11-01,SSO configuration help,SSO configuration help. Customer requesting immediate escalation to engineering.,P4,6.9,Resolved
+1016,TKT-5109,2025-10-28,GraphQL query timeout,Blocking issue. GraphQL query timeout. Customer says this is impacting go-live timeline.,P3,34.6,Resolved
+1016,TKT-5110,2026-03-30,REST API deprecation migration,REST API deprecation migration. Customer requesting immediate escalation to engineering.,P4,34.3,Escalated
+1016,TKT-5111,2025-12-30,Bulk import failing for large datasets,Recurring issue: bulk import failing for large datasets. Third time reporting this month.,P3,27.1,Escalated
+1016,TKT-5112,2025-11-16,Audit log missing entries,Blocking issue. Audit log missing entries. Customer says this is impacting go-live timeline.,P3,31.8,Resolved
+1016,TKT-5113,2026-03-10,Locale fallback not working,Customer reports locale fallback not working affecting their production environment.,P3,4.1,Resolved
+1017,TKT-5114,2026-03-13,Audit log missing entries,Recurring issue: audit log missing entries. Third time reporting this month.,P4,18.7,Resolved
+1017,TKT-5115,2025-12-16,API rate limiting issues,Blocking issue. API rate limiting issues. Customer says this is impacting go-live timeline.,P3,15.2,Resolved
+1017,TKT-5116,2025-12-27,Release preview environment setup,Minor issue with release preview environment setup. Customer happy with workaround for now.,P2,,Open
+1017,TKT-5117,2025-12-24,Marketplace app compatibility issue,Marketplace app compatibility issue. Customer requesting immediate escalation to engineering.,P3,,Resolved
+1018,TKT-5118,2026-03-10,Content scheduling timezone bug,Minor issue with content scheduling timezone bug. Customer happy with workaround for now.,P4,16.2,Resolved
+1018,TKT-5119,2026-04-09,Release preview environment setup,Customer reports release preview environment setup affecting their production environment.,P4,12.2,Resolved
+1018,TKT-5120,2026-02-15,REST API deprecation migration,Customer reports rest api deprecation migration affecting their production environment.,P3,17.9,Resolved
+1019,TKT-5121,2025-12-30,Marketplace app compatibility issue,Customer reports marketplace app compatibility issue affecting their production environment.,P4,19.6,Resolved
+1020,TKT-5122,2026-02-14,Workflow automation broken after update,Recurring issue: workflow automation broken after update. Third time reporting this month.,P4,9.5,Resolved
+1021,TKT-5123,2026-03-30,SDK upgrade guidance,SDK upgrade guidance. Customer requesting immediate escalation to engineering.,P3,21.0,Resolved
+1021,TKT-5124,2026-01-04,Content sync failures,Minor issue with content sync failures. Customer happy with workaround for now.,P3,3.9,Resolved
+1021,TKT-5125,2025-10-10,Custom field rendering issue,Recurring issue: custom field rendering issue. Third time reporting this month.,P3,8.7,Resolved
+1023,TKT-5126,2025-11-18,REST API deprecation migration,REST API deprecation migration. Customer requesting immediate escalation to engineering.,P1,12.6,Resolved
+1023,TKT-5127,2025-11-06,Content scheduling timezone bug,Customer reports content scheduling timezone bug affecting their production environment.,P4,13.5,Resolved
+1023,TKT-5128,2026-01-26,REST API deprecation migration,Minor issue with rest api deprecation migration. Customer happy with workaround for now.,P4,4.9,Resolved
+1026,TKT-5129,2026-01-28,Content sync failures,Customer reports content sync failures affecting their production environment.,P4,15.1,Resolved
+1026,TKT-5130,2026-02-25,Webhook delivery delays,Webhook delivery delays. Customer requesting immediate escalation to engineering.,P3,16.5,Resolved
+1027,TKT-5131,2026-01-21,GraphQL query timeout,Customer reports graphql query timeout affecting their production environment.,P3,8.3,Resolved
+1028,TKT-5132,2026-02-21,Migration from legacy editor,Blocking issue. Migration from legacy editor. Customer says this is impacting go-live timeline.,P2,4.5,Open
+1028,TKT-5133,2025-11-06,Webhook delivery delays,Webhook delivery delays. Customer requesting immediate escalation to engineering.,P3,9.7,Resolved
+1029,TKT-5134,2026-01-22,SDK upgrade guidance,Customer reports sdk upgrade guidance affecting their production environment.,P2,15.5,Resolved
+1030,TKT-5135,2025-10-14,API rate limiting issues,Customer reports api rate limiting issues affecting their production environment.,P3,16.9,Resolved
+1031,TKT-5136,2026-03-26,Role permissions not applying correctly,Minor issue with role permissions not applying correctly. Customer happy with workaround for now.,P2,15.1,Resolved
+1031,TKT-5137,2026-04-13,Audit log missing entries,Blocking issue. Audit log missing entries. Customer says this is impacting go-live timeline.,P3,9.3,Resolved
+1031,TKT-5138,2025-11-03,SSO configuration help,Customer reports sso configuration help affecting their production environment.,P4,18.6,Resolved
+1032,TKT-5139,2026-01-28,Webhook delivery delays,Minor issue with webhook delivery delays. Customer happy with workaround for now.,P3,17.1,Resolved
+1032,TKT-5140,2025-12-06,Locale fallback not working,Locale fallback not working. Customer requesting immediate escalation to engineering.,P4,5.2,Resolved
+1032,TKT-5141,2025-12-23,Role permissions not applying correctly,Minor issue with role permissions not applying correctly. Customer happy with workaround for now.,P2,22.2,Resolved
+1033,TKT-5142,2025-11-13,API rate limiting issues,API rate limiting issues. Customer requesting immediate escalation to engineering.,P2,4.5,Resolved
+1033,TKT-5143,2026-04-01,CDN cache invalidation delays,Customer reports cdn cache invalidation delays affecting their production environment.,P4,4.8,Resolved
+1033,TKT-5144,2026-01-27,GraphQL query timeout,Minor issue with graphql query timeout. Customer happy with workaround for now.,P3,3.6,Resolved
+1034,TKT-5145,2026-01-07,Locale fallback not working,Customer reports locale fallback not working affecting their production environment.,P4,14.1,Open
+1034,TKT-5146,2026-01-20,GraphQL query timeout,Blocking issue. GraphQL query timeout. Customer says this is impacting go-live timeline.,P3,17.3,Resolved
+1034,TKT-5147,2025-10-20,GraphQL query timeout,Blocking issue. GraphQL query timeout. Customer says this is impacting go-live timeline.,P3,7.2,Resolved
+1035,TKT-5148,2026-01-22,Webhook delivery delays,Recurring issue: webhook delivery delays. Third time reporting this month.,P3,12.2,Resolved
+1035,TKT-5149,2026-03-02,Custom field rendering issue,Minor issue with custom field rendering issue. Customer happy with workaround for now.,P4,3.5,Resolved
+1035,TKT-5150,2025-11-05,GraphQL query timeout,Blocking issue. GraphQL query timeout. Customer says this is impacting go-live timeline.,P3,16.5,Resolved
+1037,TKT-5151,2026-01-23,Migration from legacy editor,Recurring issue: migration from legacy editor. Third time reporting this month.,P3,8.4,Resolved
+1038,TKT-5152,2026-01-20,GraphQL query timeout,GraphQL query timeout. Customer requesting immediate escalation to engineering.,P3,19.5,Resolved
+1041,TKT-5153,2025-10-14,Migration from legacy editor,Customer reports migration from legacy editor affecting their production environment.,P4,3.4,Open
+1041,TKT-5154,2025-10-08,Release preview environment setup,Recurring issue: release preview environment setup. Third time reporting this month.,P4,9.9,Resolved
+1041,TKT-5155,2026-01-06,Bulk import failing for large datasets,Minor issue with bulk import failing for large datasets. Customer happy with workaround for now.,P4,10.7,Resolved
+1042,TKT-5156,2025-11-18,Bulk import failing for large datasets,Blocking issue. Bulk import failing for large datasets. Customer says this is impacting go-live timeline.,P3,16.6,Resolved
+1042,TKT-5157,2025-12-13,Role permissions not applying correctly,Recurring issue: role permissions not applying correctly. Third time reporting this month.,P4,9.9,Resolved
+1042,TKT-5158,2026-02-02,Migration from legacy editor,Minor issue with migration from legacy editor. Customer happy with workaround for now.,P1,16.3,Resolved
+1043,TKT-5159,2026-03-28,SSO configuration help,Blocking issue. SSO configuration help. Customer says this is impacting go-live timeline.,P2,19.7,Resolved
+1044,TKT-5160,2026-01-24,Audit log missing entries,Minor issue with audit log missing entries. Customer happy with workaround for now.,P2,13.2,Resolved
+1044,TKT-5161,2026-02-05,CDN cache invalidation delays,Recurring issue: cdn cache invalidation delays. Third time reporting this month.,P3,11.3,Resolved
+1044,TKT-5162,2025-10-09,REST API deprecation migration,Customer reports rest api deprecation migration affecting their production environment.,P3,22.4,Resolved
+1045,TKT-5163,2025-11-06,CDN cache invalidation delays,Blocking issue. CDN cache invalidation delays. Customer says this is impacting go-live timeline.,P2,12.6,Resolved
+1045,TKT-5164,2025-10-23,Workflow automation broken after update,Recurring issue: workflow automation broken after update. Third time reporting this month.,P3,3.7,Resolved
+1045,TKT-5165,2026-03-25,Content scheduling timezone bug,Blocking issue. Content scheduling timezone bug. Customer says this is impacting go-live timeline.,P4,16.6,Resolved
+1046,TKT-5166,2026-01-29,Audit log missing entries,Minor issue with audit log missing entries. Customer happy with workaround for now.,P2,9.6,Resolved
+1046,TKT-5167,2025-12-30,REST API deprecation migration,REST API deprecation migration. Customer requesting immediate escalation to engineering.,P4,14.6,Resolved
+1047,TKT-5168,2026-04-05,SDK upgrade guidance,Blocking issue. SDK upgrade guidance. Customer says this is impacting go-live timeline.,P1,22.3,Resolved
+1047,TKT-5169,2025-10-14,Workflow automation broken after update,Workflow automation broken after update. Customer requesting immediate escalation to engineering.,P2,12.4,Resolved
+1049,TKT-5170,2025-12-11,Content scheduling timezone bug,Content scheduling timezone bug. Customer requesting immediate escalation to engineering.,P2,13.1,Resolved
+1049,TKT-5171,2026-04-08,Migration from legacy editor,Customer reports migration from legacy editor affecting their production environment.,P4,8.1,Resolved
+1050,TKT-5172,2025-11-14,Marketplace app compatibility issue,Marketplace app compatibility issue. Customer requesting immediate escalation to engineering.,P4,16.5,Resolved
+1051,TKT-5173,2025-10-22,Content scheduling timezone bug,Recurring issue: content scheduling timezone bug. Third time reporting this month.,P2,13.6,Resolved
+1052,TKT-5174,2026-03-19,Content scheduling timezone bug,Minor issue with content scheduling timezone bug. Customer happy with workaround for now.,P4,11.1,Resolved
+1053,TKT-5175,2025-12-07,Performance degradation on publish,Customer reports performance degradation on publish affecting their production environment.,P3,20.5,Resolved
+1055,TKT-5176,2026-04-11,New editor crash on Safari,Blocking issue. New editor crash on Safari. Customer says this is impacting go-live timeline.,P3,8.6,Resolved
+1056,TKT-5177,2026-02-13,Role permissions not applying correctly,Minor issue with role permissions not applying correctly. Customer happy with workaround for now.,P4,10.6,Resolved
+1058,TKT-5178,2025-10-11,New editor crash on Safari,Customer reports new editor crash on safari affecting their production environment.,P3,8.9,Resolved
+1058,TKT-5179,2026-03-16,Release preview environment setup,Release preview environment setup. Customer requesting immediate escalation to engineering.,P4,23.0,Resolved
+1059,TKT-5180,2026-01-09,Workflow automation broken after update,Minor issue with workflow automation broken after update. Customer happy with workaround for now.,P3,4.2,Resolved
+1059,TKT-5181,2025-12-26,Locale fallback not working,Recurring issue: locale fallback not working. Third time reporting this month.,P4,15.0,Resolved
+1060,TKT-5182,2026-01-14,Release preview environment setup,Customer reports release preview environment setup affecting their production environment.,P1,2.2,Resolved
+1060,TKT-5183,2025-12-12,REST API deprecation migration,REST API deprecation migration. Customer requesting immediate escalation to engineering.,P2,11.8,Resolved
+1061,TKT-5184,2026-03-18,Content sync failures,Recurring issue: content sync failures. Third time reporting this month.,P1,4.0,Open
+1065,TKT-5185,2025-11-17,Role permissions not applying correctly,Customer reports role permissions not applying correctly affecting their production environment.,P4,21.8,Resolved
+1066,TKT-5186,2026-01-25,Workflow automation broken after update,Workflow automation broken after update. Customer requesting immediate escalation to engineering.,P3,16.5,Resolved
+1067,TKT-5187,2025-10-16,GraphQL query timeout,Minor issue with graphql query timeout. Customer happy with workaround for now.,P3,19.2,Resolved
+1067,TKT-5188,2025-12-07,Role permissions not applying correctly,Recurring issue: role permissions not applying correctly. Third time reporting this month.,P3,3.3,Open
+1067,TKT-5189,2026-01-09,New editor crash on Safari,Recurring issue: new editor crash on safari. Third time reporting this month.,P2,23.5,Resolved
+1068,TKT-5190,2026-03-14,Webhook delivery delays,Customer reports webhook delivery delays affecting their production environment.,P2,18.9,Resolved
+1068,TKT-5191,2026-02-24,New editor crash on Safari,New editor crash on Safari. Customer requesting immediate escalation to engineering.,P4,4.3,Resolved
+1068,TKT-5192,2025-10-01,New editor crash on Safari,Customer reports new editor crash on safari affecting their production environment.,P1,12.9,Resolved
+1069,TKT-5193,2025-10-01,Workflow automation broken after update,Blocking issue. Workflow automation broken after update. Customer says this is impacting go-live timeline.,P2,9.3,Resolved
+1069,TKT-5194,2025-10-18,Content scheduling timezone bug,Blocking issue. Content scheduling timezone bug. Customer says this is impacting go-live timeline.,P3,10.9,Resolved
+1069,TKT-5195,2026-02-01,Locale fallback not working,Customer reports locale fallback not working affecting their production environment.,P1,23.0,Resolved
+1070,TKT-5196,2026-03-15,GraphQL query timeout,Customer reports graphql query timeout affecting their production environment.,P4,10.8,Resolved
+1070,TKT-5197,2026-01-26,CDN cache invalidation delays,CDN cache invalidation delays. Customer requesting immediate escalation to engineering.,P3,23.1,Resolved
+1071,TKT-5198,2025-12-16,SDK upgrade guidance,Minor issue with sdk upgrade guidance. Customer happy with workaround for now.,P3,23.3,Resolved
+1073,TKT-5199,2025-11-05,Content scheduling timezone bug,Customer reports content scheduling timezone bug affecting their production environment.,P2,15.9,Resolved
+1073,TKT-5200,2026-01-08,Performance degradation on publish,Customer reports performance degradation on publish affecting their production environment.,P1,23.9,Resolved
+1074,TKT-5201,2025-10-05,Content scheduling timezone bug,Customer reports content scheduling timezone bug affecting their production environment.,P3,20.4,Resolved
+1074,TKT-5202,2025-10-31,GraphQL query timeout,Recurring issue: graphql query timeout. Third time reporting this month.,P2,19.3,Resolved
+1075,TKT-5203,2025-10-10,Release preview environment setup,Recurring issue: release preview environment setup. Third time reporting this month.,P2,14.7,Open
+1075,TKT-5204,2025-10-12,Content scheduling timezone bug,Recurring issue: content scheduling timezone bug. Third time reporting this month.,P4,12.4,Open
+1075,TKT-5205,2025-10-25,Migration from legacy editor,Minor issue with migration from legacy editor. Customer happy with workaround for now.,P1,15.9,Open
+1076,TKT-5206,2026-03-02,Marketplace app compatibility issue,Blocking issue. Marketplace app compatibility issue. Customer says this is impacting go-live timeline.,P2,20.0,Resolved
+1077,TKT-5207,2026-04-07,SSO configuration help,Minor issue with sso configuration help. Customer happy with workaround for now.,P4,11.4,Resolved
+1078,TKT-5208,2025-11-24,Webhook delivery delays,Customer reports webhook delivery delays affecting their production environment.,P4,14.7,Resolved
+1078,TKT-5209,2026-04-12,Marketplace app compatibility issue,Minor issue with marketplace app compatibility issue. Customer happy with workaround for now.,P2,3.4,Resolved
+1079,TKT-5210,2025-10-11,CDN cache invalidation delays,Recurring issue: cdn cache invalidation delays. Third time reporting this month.,P3,11.7,Open
+1081,TKT-5211,2025-11-15,SDK upgrade guidance,Customer reports sdk upgrade guidance affecting their production environment.,P1,12.7,Resolved
+1081,TKT-5212,2026-01-30,Marketplace app compatibility issue,Recurring issue: marketplace app compatibility issue. Third time reporting this month.,P4,11.2,Resolved
+1081,TKT-5213,2025-12-01,Performance degradation on publish,Recurring issue: performance degradation on publish. Third time reporting this month.,P2,8.0,Resolved
+1083,TKT-5214,2025-12-17,Content scheduling timezone bug,Content scheduling timezone bug. Customer requesting immediate escalation to engineering.,P4,3.9,Resolved
+1084,TKT-5215,2025-10-25,API rate limiting issues,Blocking issue. API rate limiting issues. Customer says this is impacting go-live timeline.,P3,6.2,Open
+1084,TKT-5216,2026-01-27,CDN cache invalidation delays,Recurring issue: cdn cache invalidation delays. Third time reporting this month.,P4,23.7,Resolved
+1084,TKT-5217,2026-01-30,Workflow automation broken after update,Minor issue with workflow automation broken after update. Customer happy with workaround for now.,P2,4.5,Resolved
+1085,TKT-5218,2025-12-12,SDK upgrade guidance,Recurring issue: sdk upgrade guidance. Third time reporting this month.,P4,2.9,Resolved
+1086,TKT-5219,2025-10-12,Workflow automation broken after update,Customer reports workflow automation broken after update affecting their production environment.,P3,19.7,Resolved
+1086,TKT-5220,2026-02-02,Content sync failures,Blocking issue. Content sync failures. Customer says this is impacting go-live timeline.,P4,5.9,Resolved
+1086,TKT-5221,2026-02-26,Webhook delivery delays,Webhook delivery delays. Customer requesting immediate escalation to engineering.,P2,7.2,Resolved
+1087,TKT-5222,2025-10-29,Performance degradation on publish,Performance degradation on publish. Customer requesting immediate escalation to engineering.,P4,21.8,Resolved
+1087,TKT-5223,2026-01-05,Locale fallback not working,Recurring issue: locale fallback not working. Third time reporting this month.,P2,18.2,Resolved
+1087,TKT-5224,2025-11-07,SSO configuration help,Recurring issue: sso configuration help. Third time reporting this month.,P3,12.7,Resolved
+1088,TKT-5225,2026-03-11,SDK upgrade guidance,SDK upgrade guidance. Customer requesting immediate escalation to engineering.,P3,5.0,Resolved
+1088,TKT-5226,2025-10-16,Workflow automation broken after update,Workflow automation broken after update. Customer requesting immediate escalation to engineering.,P3,4.8,Resolved
+1088,TKT-5227,2026-04-13,Migration from legacy editor,Migration from legacy editor. Customer requesting immediate escalation to engineering.,P2,12.2,Resolved
+1089,TKT-5228,2026-03-06,Custom field rendering issue,Recurring issue: custom field rendering issue. Third time reporting this month.,P4,19.4,Resolved
+1090,TKT-5229,2025-11-25,SSO configuration help,Blocking issue. SSO configuration help. Customer says this is impacting go-live timeline.,P3,13.5,Resolved
+1091,TKT-5230,2025-12-03,New editor crash on Safari,Recurring issue: new editor crash on safari. Third time reporting this month.,P3,18.1,Resolved
+1091,TKT-5231,2025-11-08,GraphQL query timeout,Blocking issue. GraphQL query timeout. Customer says this is impacting go-live timeline.,P3,6.9,Open
+1091,TKT-5232,2026-04-06,API rate limiting issues,Blocking issue. API rate limiting issues. Customer says this is impacting go-live timeline.,P3,3.0,Open
+1093,TKT-5233,2025-10-26,REST API deprecation migration,Minor issue with rest api deprecation migration. Customer happy with workaround for now.,P3,19.8,Resolved
+1093,TKT-5234,2026-04-06,Content scheduling timezone bug,Minor issue with content scheduling timezone bug. Customer happy with workaround for now.,P3,14.3,Resolved
+1093,TKT-5235,2025-10-24,Performance degradation on publish,Customer reports performance degradation on publish affecting their production environment.,P2,8.5,Resolved
+1094,TKT-5236,2026-02-27,Custom field rendering issue,Customer reports custom field rendering issue affecting their production environment.,P2,12.1,Resolved
+1094,TKT-5237,2025-11-17,New editor crash on Safari,New editor crash on Safari. Customer requesting immediate escalation to engineering.,P3,5.0,Resolved
+1094,TKT-5238,2026-01-07,New editor crash on Safari,New editor crash on Safari. Customer requesting immediate escalation to engineering.,P4,2.0,Resolved
+1096,TKT-5239,2026-02-25,Bulk import failing for large datasets,Recurring issue: bulk import failing for large datasets. Third time reporting this month.,P4,17.4,Resolved
+1096,TKT-5240,2026-02-09,SSO configuration help,SSO configuration help. Customer requesting immediate escalation to engineering.,P4,9.4,Open
+1099,TKT-5241,2026-03-15,CDN cache invalidation delays,Blocking issue. CDN cache invalidation delays. Customer says this is impacting go-live timeline.,P3,2.9,Resolved
+1099,TKT-5242,2025-12-25,SSO configuration help,Recurring issue: sso configuration help. Third time reporting this month.,P3,19.0,Resolved
+1099,TKT-5243,2026-02-26,Release preview environment setup,Recurring issue: release preview environment setup. Third time reporting this month.,P2,12.5,Open
+1100,TKT-5244,2025-12-10,GraphQL query timeout,Customer reports graphql query timeout affecting their production environment.,P3,7.9,Resolved
+1102,TKT-5245,2026-01-29,CDN cache invalidation delays,Blocking issue. CDN cache invalidation delays. Customer says this is impacting go-live timeline.,P3,13.0,Resolved
+1102,TKT-5246,2026-03-22,Release preview environment setup,Customer reports release preview environment setup affecting their production environment.,P4,11.9,Resolved
+1103,TKT-5247,2025-10-20,New editor crash on Safari,Customer reports new editor crash on safari affecting their production environment.,P2,10.6,Resolved
+1104,TKT-5248,2025-11-22,Workflow automation broken after update,Blocking issue. Workflow automation broken after update. Customer says this is impacting go-live timeline.,P2,5.3,Resolved
+1106,TKT-5249,2025-12-28,Bulk import failing for large datasets,Minor issue with bulk import failing for large datasets. Customer happy with workaround for now.,P4,13.9,Resolved
+1106,TKT-5250,2025-10-06,New editor crash on Safari,Recurring issue: new editor crash on safari. Third time reporting this month.,P4,2.5,Resolved
+1107,TKT-5251,2026-02-02,Bulk import failing for large datasets,Blocking issue. Bulk import failing for large datasets. Customer says this is impacting go-live timeline.,P3,16.4,Resolved
+1107,TKT-5252,2025-11-03,REST API deprecation migration,REST API deprecation migration. Customer requesting immediate escalation to engineering.,P4,11.8,Resolved
+1108,TKT-5253,2025-10-13,Workflow automation broken after update,Recurring issue: workflow automation broken after update. Third time reporting this month.,P3,10.2,Resolved
+1109,TKT-5254,2026-04-01,Custom field rendering issue,Blocking issue. Custom field rendering issue. Customer says this is impacting go-live timeline.,P3,5.7,Open
+1109,TKT-5255,2026-03-20,Custom field rendering issue,Recurring issue: custom field rendering issue. Third time reporting this month.,P2,5.9,Resolved
+1110,TKT-5256,2026-01-21,Locale fallback not working,Locale fallback not working. Customer requesting immediate escalation to engineering.,P2,23.9,Resolved
+1111,TKT-5257,2025-12-28,SDK upgrade guidance,Recurring issue: sdk upgrade guidance. Third time reporting this month.,P3,17.6,Resolved
+1111,TKT-5258,2025-11-01,CDN cache invalidation delays,Customer reports cdn cache invalidation delays affecting their production environment.,P3,23.5,Resolved
+1112,TKT-5259,2025-11-09,Content scheduling timezone bug,Customer reports content scheduling timezone bug affecting their production environment.,P4,22.9,Open
+1112,TKT-5260,2026-01-30,Release preview environment setup,Release preview environment setup. Customer requesting immediate escalation to engineering.,P4,9.3,Resolved
+1112,TKT-5261,2026-01-22,Marketplace app compatibility issue,Marketplace app compatibility issue. Customer requesting immediate escalation to engineering.,P4,19.6,Resolved
+1114,TKT-5262,2026-01-11,Content sync failures,Blocking issue. Content sync failures. Customer says this is impacting go-live timeline.,P2,14.1,Resolved
+1114,TKT-5263,2026-03-14,Locale fallback not working,Recurring issue: locale fallback not working. Third time reporting this month.,P3,4.0,Resolved
+1114,TKT-5264,2025-11-20,Marketplace app compatibility issue,Customer reports marketplace app compatibility issue affecting their production environment.,P3,19.2,Resolved
+1116,TKT-5265,2026-03-04,SSO configuration help,Blocking issue. SSO configuration help. Customer says this is impacting go-live timeline.,P4,10.7,Resolved
+1116,TKT-5266,2025-11-07,REST API deprecation migration,Minor issue with rest api deprecation migration. Customer happy with workaround for now.,P4,22.0,Resolved
+1116,TKT-5267,2025-12-18,CDN cache invalidation delays,Minor issue with cdn cache invalidation delays. Customer happy with workaround for now.,P3,2.3,Resolved
+1118,TKT-5268,2025-11-11,New editor crash on Safari,Minor issue with new editor crash on safari. Customer happy with workaround for now.,P4,11.1,Resolved
+1119,TKT-5269,2025-12-17,Migration from legacy editor,Minor issue with migration from legacy editor. Customer happy with workaround for now.,P4,15.2,Resolved
+1119,TKT-5270,2026-04-12,REST API deprecation migration,Minor issue with rest api deprecation migration. Customer happy with workaround for now.,P4,3.5,Open
+1119,TKT-5271,2025-11-14,SSO configuration help,Blocking issue. SSO configuration help. Customer says this is impacting go-live timeline.,P1,16.1,Resolved

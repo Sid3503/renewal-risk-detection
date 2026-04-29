@@ -110,13 +110,49 @@ def _cached_pipeline(run_key: int = 0) -> list[RiskReport]:
     return run_pipeline()
 
 
+_PIPELINE_STAGES = [
+    ("📥", "Stage 1 — Load & Reconcile",     "5 CSV/TXT files → DataFrames · fuzzy account-name matching"),
+    ("⚡", "Stage 2 — Signal Computation",    "Usage trends · support escalations · NPS · SDK cross-ref"),
+    ("🤖", "Stage 3 — LLM CSM Extraction",   "LLM parses messy CSM notes → structured signals + confidence"),
+    ("📊", "Stage 4 — Risk Scoring",          "Weighted signal sum → High / Medium / Low tier assignment"),
+    ("✍️", "Stage 5 — LLM Explanation",      "Plain-English briefing + recommended action per account"),
+]
+
+_STAGE_ROW_CSS = (
+    "display:flex;align-items:flex-start;gap:12px;"
+    "padding:10px 14px;border-bottom:1px solid #f1f5f9;"
+)
+_ICON_CSS  = "font-size:22px;flex-shrink:0;line-height:1.4"
+_TITLE_CSS = "font-weight:600;font-size:14px;color:#0f172a;margin:0 0 2px"
+_DESC_CSS  = "font-size:12px;color:#64748b;margin:0"
+
+
+def _stage_rows_html() -> str:
+    rows = "".join(
+        f"<div style='{_STAGE_ROW_CSS}'>"
+        f"  <div style='{_ICON_CSS}'>{icon}</div>"
+        f"  <div>"
+        f"    <p style='{_TITLE_CSS}'>{title}</p>"
+        f"    <p style='{_DESC_CSS}'>{detail}</p>"
+        f"  </div>"
+        f"</div>"
+        for icon, title, detail in _PIPELINE_STAGES
+    )
+    return (
+        "<div style='border:1px solid #e2e8f0;border-radius:10px;"
+        "overflow:hidden;background:#fff;margin-top:8px'>"
+        f"{rows}"
+        "</div>"
+    )
+
+
 def get_reports() -> list[RiskReport]:
     """Return pipeline reports.
 
     Fast path: module-level @cache_data hit → returns in <100 ms even after a
     browser refresh or opening a new tab.
-    Slow path: cache miss (first ever run or after Re-run) → shows loading UI
-    and runs the full pipeline (~60-90 s).
+    Slow path: cache miss (first ever run or after Re-run) → shows an animated
+    st.status() panel listing all 5 pipeline stages while blocking.
     """
     run_key = st.session_state.get("run_key", 0)
 
@@ -125,43 +161,25 @@ def get_reports() -> list[RiskReport]:
     if st.session_state.get("_loaded_key") == run_key and "reports" in st.session_state:
         return st.session_state["reports"]
 
-    # Show loading splash for this session visit
-    _show_loading_splash()
-
-    progress_bar = st.progress(0.0)
-    status_box   = st.empty()
-    log_box      = st.empty()
-    log_lines: list[str] = []
-
-    def _stage(msg: str, pct: float) -> None:
-        progress_bar.progress(pct)
-        status_box.markdown(f"**{msg}**")
-        log_lines.append(msg)
-        log_box.markdown(
-            "<div style='background:#f8fafc;border:1px solid #e2e8f0;"
-            "border-radius:8px;padding:10px 14px;font-size:13px;"
-            "font-family:monospace;max-height:180px;overflow-y:auto'>"
-            + "".join(
-                f"<div class='stage-row'>"
-                f"<div class='stage-dot {'done' if i < len(log_lines)-1 else 'active'}'></div>"
-                f"{line}</div>"
-                for i, line in enumerate(log_lines)
-            )
-            + "<div class='flow-bar'></div>"
-            + "</div>",
+    with st.status("⏳ Running pipeline — this takes ~60–90 s on first run…", expanded=True) as status:
+        st.markdown(
+            "<p style='color:#64748b;font-size:13px;margin:0 0 4px'>"
+            "All 5 stages will execute sequentially. Results are cached after this run.</p>",
+            unsafe_allow_html=True,
+        )
+        st.markdown(_stage_rows_html(), unsafe_allow_html=True)
+        st.markdown(
+            "<div class='flow-bar' style='margin-top:12px'></div>",
             unsafe_allow_html=True,
         )
 
-    # On a cache HIT this returns in <100 ms; the progress bar fills instantly.
-    # On a cache MISS this runs the full pipeline with live stage callbacks.
-    # @cache_data only caches the return value — the _stage side-effects run
-    # every time (they're harmless no-ops on cache hits since the function body
-    # is skipped and _stage is never called).
-    reports = _cached_pipeline(run_key)
+        reports = _cached_pipeline(run_key)
 
-    progress_bar.progress(1.0)
-    status_box.success("✅ Pipeline complete — results cached.")
-    log_box.empty()
+        status.update(
+            label="✅ Pipeline complete — results cached for this session.",
+            state="complete",
+            expanded=False,
+        )
 
     st.session_state["reports"]     = reports
     st.session_state["_loaded_key"] = run_key
@@ -224,6 +242,59 @@ def _show_loading_splash() -> None:
     st.markdown("**Pipeline progress**")
 
 
+def _show_start_screen() -> None:
+    """Landing hero shown before the user triggers the pipeline."""
+    nodes = _ARROW.join([
+        _node("📥", "Load Data"),
+        _node("⚡", "Signals"),
+        _node("🤖", "LLM Extract", llm=True),
+        _node("📊", "Score"),
+        _node("✍️", "LLM Explain", llm=True),
+    ])
+    st.markdown(f"""
+    <div style="text-align:center;padding:48px 0 24px">
+      <div style="font-size:64px;margin-bottom:12px">⚠️</div>
+      <h1 style="margin:0 0 8px;color:#0f172a;font-size:2.2rem">Renewal Risk Intelligence</h1>
+      <p style="color:#64748b;font-size:16px;max-width:560px;margin:0 auto 32px">
+        Automatically surface which accounts are at risk of churning — before it's too late.
+        Deterministic scoring across 5 data sources, with LLM-generated plain-English briefings.
+      </p>
+    </div>
+
+    <div style="display:flex;justify-content:center;align-items:center;
+                flex-wrap:wrap;gap:6px;margin-bottom:28px">
+      {nodes}
+    </div>
+
+    <div style="display:flex;justify-content:center;gap:32px;
+                font-size:13px;color:#64748b;margin-bottom:36px;flex-wrap:wrap">
+      <span>🗂️ 5 data sources</span>
+      <span>📋 120 accounts</span>
+      <span>🔍 ~30 in renewal window</span>
+      <span>✨ 2 LLM passes</span>
+      <span>⏱️ ~60–90 s first run</span>
+    </div>
+    """, unsafe_allow_html=True)
+
+    _, btn_col, _ = st.columns([2, 1, 2])
+    with btn_col:
+        if st.button(
+            "🚀 Start Analysis",
+            use_container_width=True,
+            type="primary",
+            help="Run the full pipeline: load data, compute risk signals, call the LLM, and render the dashboard.",
+        ):
+            st.session_state["analysis_started"] = True
+            st.rerun()
+
+    st.markdown("")
+    st.info(
+        "💡 **First run takes ~60–90 s** (LLM calls for all accounts in the renewal window). "
+        "Subsequent page interactions are instant — results are session-cached.",
+        icon=None,
+    )
+
+
 # ── Sidebar navigation ────────────────────────────────────────────────────────
 
 with st.sidebar:
@@ -240,6 +311,7 @@ with st.sidebar:
         st.session_state.pop("reports", None)
         st.session_state.pop("_loaded_key", None)
         st.session_state["run_key"] = st.session_state.get("run_key", 0) + 1
+        st.session_state["analysis_started"] = False
         st.rerun()
     st.caption("Scores are deterministic weighted sums.\nLLM writes explanations only.")
 
@@ -251,6 +323,10 @@ with st.sidebar:
 if page == "🏠 Dashboard":
     st.title("⚠️ Renewal Risk Intelligence")
     st.caption("Contentstack BizOps · Accounts renewing in the next 90 days · LLM-powered risk briefings")
+
+    if not st.session_state.get("analysis_started", False):
+        _show_start_screen()
+        st.stop()
 
     reports = get_reports()
 

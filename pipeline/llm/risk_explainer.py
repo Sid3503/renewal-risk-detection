@@ -117,24 +117,7 @@ _FALLBACK_EXPLANATIONS: dict[str, tuple[str, str]] = {
 
 def _build_explainer_prompt(account: AccountRecord, score: RiskScore) -> str:
     """Build structured CoT + context prompt for explanation generation."""
-    csm_summary = account.csm.raw_summary if account.csm else "No CSM notes available."
-    nps_score_line = (
-        f"NPS score: {account.nps.score} ({account.nps.category})"
-        if account.nps
-        else "No NPS data."
-    )
-    nps_verbatim = (
-        account.nps.verbatim
-        if account.nps and account.nps.verbatim
-        else "No verbatim."
-    )
-    sdk_info = (
-        f"DEPRECATED — on SDK {account.usage.sdk_version}, "
-        f"security patches stop {account.changelog.deprecation_deadline} "
-        f"({account.changelog.days_to_deadline} days from now)"
-        if account.changelog and account.changelog.is_deprecated
-        else "Current SDK version, no deprecation risk."
-    )
+    # ── Usage ────────────────────────────────────────────────────────────────
     usage_line = (
         f"Active users: {account.usage.latest_active_users} | "
         f"MoM change: {account.usage.mom_change_pct:+.1f}% | "
@@ -143,31 +126,114 @@ def _build_explainer_prompt(account: AccountRecord, score: RiskScore) -> str:
         else "No usage data."
     )
 
+    # ── Support — include resolution quality, not just ticket counts ─────────
+    if account.support:
+        s = account.support
+        resolution_note = (
+            f"avg resolution {s.avg_resolution_hours:.0f}h"
+            if s.avg_resolution_hours > 0
+            else "resolution time unavailable"
+        )
+        support_line = (
+            f"P1 tickets: {s.p1_count} (capped at 3 for scoring) | "
+            f"Unresolved P1: {s.has_unresolved_p1} | "
+            f"Escalated: {s.escalated_tickets} | "
+            f"Total open: {s.open_tickets} | "
+            f"{resolution_note}"
+        )
+    else:
+        support_line = "No support ticket data."
+
+    # ── NPS — use translation when available ─────────────────────────────────
+    nps_score_line = (
+        f"NPS score: {account.nps.score} ({account.nps.category})"
+        if account.nps
+        else "No NPS data."
+    )
+    if account.nps and account.nps.verbatim:
+        if account.nps.verbatim_translated:
+            nps_verbatim = f"{account.nps.verbatim_translated} [translated from non-English original]"
+        else:
+            nps_verbatim = account.nps.verbatim
+    else:
+        nps_verbatim = "No verbatim."
+
+    # ── SDK / Changelog — include which specific features break ──────────────
+    if account.changelog and account.changelog.is_deprecated:
+        features_str = (
+            "; ".join(account.changelog.affected_features)
+            if account.changelog.affected_features
+            else "security patches and API v2"
+        )
+        sdk_info = (
+            f"DEPRECATED — on SDK {account.changelog.sdk_version}, "
+            f"patches stop {account.changelog.deprecation_deadline} "
+            f"({account.changelog.days_to_deadline} days from now). "
+            f"Breaking features: {features_str}"
+        )
+    else:
+        sdk_info = "Current SDK version, no deprecation risk."
+
+    # ── CSM — include confidence and positive signal ──────────────────────────
+    if account.csm:
+        c = account.csm
+        conf_pct = int(c.confidence * 100)
+        confidence_note = (
+            f"LOW CONFIDENCE ({conf_pct}%) — hedge language for CSM-derived signals"
+            if c.confidence < 0.6
+            else f"confidence: {conf_pct}%"
+        )
+        positive_note = (
+            " NOTE: CSM also detected a positive/expansion signal alongside the risk signals — "
+            "account may still be salvageable; factor this into your recommended action."
+            if c.positive_signal
+            else ""
+        )
+        csm_block = (
+            f"Summary: {c.raw_summary}\n"
+            f"  Extraction confidence: {confidence_note}{positive_note}"
+        )
+    else:
+        csm_block = "No CSM notes available."
+
+    # ── Signal priority list with weights ─────────────────────────────────────
+    if score.contributing_signals and score.contributing_signal_weights:
+        priority_lines = "\n  ".join(
+            f"{label}  ({weight:.1f} pts)"
+            for label, weight in zip(score.contributing_signals, score.contributing_signal_weights)
+        )
+        priority_block = f"Signals ranked by weight (focus your narrative on the top 1-2):\n  {priority_lines}"
+    else:
+        priority_block = "No signals fired."
+
     return f"""{_FEW_SHOT_EXAMPLES}
 
 === NOW WRITE THE REAL BRIEFING ===
 
 ACCOUNT CONTEXT:
   Name: {account.account_name} | Plan: {account.plan_tier} | ARR: ${account.arr:,.0f} | Industry: {account.industry}
-  Days to renewal: {account.days_to_renewal} | CSM: {account.csm_name}
+  Region: {account.region} | Days to renewal: {account.days_to_renewal} | CSM: {account.csm_name}
 
 RISK SCORE:
   Tier: {score.tier.value} (score: {score.raw_score:.1f})
   Top signal: {score.top_signal}
-  All contributing signals: {", ".join(score.contributing_signals) if score.contributing_signals else "None"}
+  {priority_block}
 
 SIGNAL DETAIL:
   Usage: {usage_line}
+  Support: {support_line}
   SDK: {sdk_info}
   {nps_score_line}
   NPS verbatim: "{nps_verbatim}"
-  CSM notes summary: {csm_summary}
+  CSM notes: {csm_block}
 
 INSTRUCTIONS:
-1. Fill `signal_narrative` first — identify the 1-2 signals that tell the most coherent story
-   and articulate what they mean together for this specific account.
+1. Fill `signal_narrative` first — the RISK SCORE section shows signals ranked by weight.
+   Focus on the 1-2 highest-weighted signals and articulate the story they tell together.
+   If CSM confidence is LOW, use hedged language ("the note suggests…") for those signals.
+   If a positive signal was detected, mention the window it creates for the recommended action.
 2. Write `explanation` (2-3 sentences) that flows from your narrative. Name specific signals.
-   Explain the business consequence, not just the data point.
+   Use the support resolution time and SDK affected features when they strengthen the story.
 3. Write `recommended_action` (1-2 sentences) with a specific WHO, WHAT, and WHEN.
    Make it something that can only be written for THIS account, not a template.
 

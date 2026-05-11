@@ -111,7 +111,7 @@ def _cached_pipeline(run_key: int = 0) -> list[RiskReport]:
 
 
 _PIPELINE_STAGES = [
-    ("📥", "Stage 1 — Load & Reconcile",     "5 CSV/TXT files → DataFrames · fuzzy account-name matching"),
+    ("📥", "Stage 1 — Load & Reconcile",     "6 files (5 CSV/TXT + changelog.md) → DataFrames · LLM extracts deprecation registry"),
     ("⚡", "Stage 2 — Signal Computation",    "Usage trends · support escalations · NPS · SDK cross-ref"),
     ("🤖", "Stage 3 — LLM CSM Extraction",   "LLM parses messy CSM notes → structured signals + confidence"),
     ("📊", "Stage 4 — Risk Scoring",          "Weighted signal sum → High / Medium / Low tier assignment"),
@@ -226,15 +226,15 @@ def _show_loading_splash() -> None:
 
     <div style="display:flex;justify-content:center;gap:28px;
                 font-size:13px;color:#64748b;margin-bottom:8px">
-      <span>🗂️ 5 data sources</span>
+      <span>🗂️ 6 data sources</span>
       <span>📋 120 accounts</span>
       <span>🔍 30 in renewal window</span>
-      <span>✨ 2 LLM passes</span>
+      <span>✨ 3 LLM passes</span>
     </div>
     """, unsafe_allow_html=True)
     st.info(
         "💡 **How this works:** Deterministic signal scoring (no LLM for risk scores) "
-        "+ an LLM for CSM note parsing and plain-English briefings. "
+        "+ LLM for changelog parsing, CSM note extraction, and plain-English briefings. "
         "First run: ~60–90 s. Subsequent interactions: instant (session-cached).",
         icon=None,
     )
@@ -268,10 +268,10 @@ def _show_start_screen() -> None:
 
     <div style="display:flex;justify-content:center;gap:32px;
                 font-size:13px;color:#64748b;margin-bottom:36px;flex-wrap:wrap">
-      <span>🗂️ 5 data sources</span>
+      <span>🗂️ 6 data sources</span>
       <span>📋 120 accounts</span>
       <span>🔍 ~30 in renewal window</span>
-      <span>✨ 2 LLM passes</span>
+      <span>✨ 3 LLM passes</span>
       <span>⏱️ ~60–90 s first run</span>
     </div>
     """, unsafe_allow_html=True)

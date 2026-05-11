@@ -8,8 +8,9 @@ from datetime import date, timedelta
 
 from pipeline.ingestion.loader import (
     load_accounts, load_usage_metrics, load_support_tickets,
-    load_nps_responses, load_csm_notes,
+    load_nps_responses, load_csm_notes, load_changelog,
 )
+from pipeline.llm.changelog_extractor import extract_deprecations
 from pipeline.signals.usage_signals import compute_usage_signals
 from pipeline.signals.support_signals import compute_support_signals
 from pipeline.signals.nps_signals import compute_nps_signals
@@ -47,12 +48,28 @@ def run_pipeline(
             stage_callback(msg, pct)
 
     logger.info("=== STAGE 1: Loading data ===")
-    _cb("📥 Loading 5 data sources…", 0.05)
+    _cb("📥 Loading 6 data sources…", 0.05)
     accounts_df = load_accounts()
     usage_df = load_usage_metrics()
     tickets_df = load_support_tickets()
     nps_df = load_nps_responses()
     csm_notes = load_csm_notes()
+    changelog_text = load_changelog()
+
+    _cb("📋 Extracting deprecation registry from changelog via LLM…", 0.12)
+    logger.info("=== STAGE 1b: LLM changelog extraction ===")
+    changelog_deprecations = extract_deprecations(changelog_text)
+    affected_features_from_changelog = [
+        f"{e.feature} (deadline: {e.deadline})"
+        for e in changelog_deprecations.events
+        if any("v3" in v.lower() or "sdk" in v.lower() for v in e.affected_versions)
+        and e.deadline
+    ]
+    logger.info(
+        "Changelog extractor found %d deprecation event(s), %d relevant to v3.x SDK",
+        len(changelog_deprecations.events),
+        len(affected_features_from_changelog),
+    )
 
     today = date.today()
     cutoff = today + timedelta(days=RENEWAL_WINDOW_DAYS)
@@ -79,7 +96,10 @@ def run_pipeline(
     support_signals = compute_support_signals(tickets_df)
     _cb("⭐ Computing NPS & changelog signals…", 0.40)
     nps_signals = compute_nps_signals(nps_df)
-    changelog_signals = compute_changelog_signals(usage_signals)
+    changelog_signals = compute_changelog_signals(
+        usage_signals,
+        affected_features=affected_features_from_changelog or None,
+    )
 
     logger.info("=== STAGE 3: LLM CSM extraction ===")
     _cb(f"🤖 Extracting CSM note signals with LLM ({len(in_window)} accounts)…", 0.55)

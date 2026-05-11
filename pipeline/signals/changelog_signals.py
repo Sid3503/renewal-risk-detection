@@ -28,12 +28,26 @@ def _days_to_deadline() -> int:
     return (deadline - date.today()).days
 
 
+_DEFAULT_AFFECTED_FEATURES = [
+    "REST API v2 (sunset April 30)",
+    "SDK v3 security patches stop April 30",
+]
+
+
 def compute_changelog_signals(
     usage_signals: dict[str, UsageSignal],
+    affected_features: list[str] | None = None,
 ) -> dict[str, ChangelogSignal]:
-    """Build ChangelogSignal for every account by checking its SDK version."""
+    """Build ChangelogSignal for every account by checking its SDK version.
+
+    Args:
+        usage_signals: dict of account_id → UsageSignal
+        affected_features: list of feature descriptions from the LLM changelog extractor.
+                           Falls back to hardcoded defaults if None or empty.
+    """
     signals: dict[str, ChangelogSignal] = {}
     days_left = _days_to_deadline()
+    features = affected_features if affected_features else _DEFAULT_AFFECTED_FEATURES
 
     for account_id, usage in usage_signals.items():
         deprecated = _is_deprecated(usage.sdk_version)
@@ -43,11 +57,7 @@ def compute_changelog_signals(
             is_deprecated=deprecated,
             deprecation_deadline=DEPRECATED_SDK_DEADLINE if deprecated else None,
             days_to_deadline=days_left if deprecated else None,
-            affected_features=(
-                ["REST API v2 (sunset April 30)", "SDK v3 security patches stop April 30"]
-                if deprecated
-                else []
-            ),
+            affected_features=features if deprecated else [],
         )
 
     return signals

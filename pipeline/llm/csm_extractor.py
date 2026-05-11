@@ -16,8 +16,10 @@ import re
 import logging
 import pandas as pd
 from pydantic import BaseModel, Field
+from rapidfuzz import process, fuzz
 from models.signals import CsmSignal
 from pipeline.llm.llm_client import call_llm
+from pipeline.ingestion.reconciler import _normalize
 
 logger = logging.getLogger(__name__)
 
@@ -164,28 +166,94 @@ def _split_notes_into_chunks(raw_notes: str) -> list[str]:
     return [c.strip() for c in chunks if c.strip()]
 
 
+_FUZZY_MATCH_THRESHOLD = 72  # minimum partial_ratio score to accept a fuzzy chunk match
+
+# Pattern that strips leading date/author noise before the account name.
+# e.g. "3/18 - ", "Apr 1 - ", "march 25 -- priya -- " → removes the prefix
+_DATE_PREFIX_RE = re.compile(
+    r"^[\d/]+\s*[-–]+\s*|"           # numeric date: "3/18 - "
+    r"^[a-z]{3,9}\s+\d+\s*[-–]+\s*",  # month-word date: "Apr 1 - ", "march 25 -- "
+    re.IGNORECASE,
+)
+
+
+def _first_line(chunk: str) -> str:
+    """Return the first non-empty line of a chunk — where the account name lives."""
+    for line in chunk.splitlines():
+        stripped = line.strip()
+        if stripped:
+            return stripped
+    return chunk[:80]
+
+
+def _extract_name_portion(first_line: str) -> str:
+    """Strip date prefix, then take the segment before the next ' - ' separator.
+
+    'Apr 1 - vengard retail - budget concerns'  →  'vengard retail'
+    '3/18 - britepath - ...'                    →  'britepath'
+    'march 25 -- meridian health -- priya'      →  'meridian health'
+    """
+    cleaned = _DATE_PREFIX_RE.sub("", first_line).strip()
+    # Take everything up to the next dash separator
+    segment = re.split(r"\s*[-–]+\s*", cleaned)[0].strip()
+    return segment if segment else cleaned
+
+
 def _find_best_chunk(account_name: str, account_id: str, chunks: list[str]) -> str | None:
-    """Find the note chunk most likely to be about this account."""
+    """Find the note chunk most likely to be about this account.
+
+    Tries four strategies in order:
+      1. Exact account ID match      — most reliable
+      2. Exact normalised name match — handles clean notes
+      3. First-word substring        — handles word-order variants
+      4. Fuzzy partial_ratio on the extracted name segment of each chunk's first line
+         — handles typos: 'britepath'→'BrightPath', 'vengard'→'Vanguard', 'Pinacle'→'Pinnacle'
+    """
     name_lower = account_name.lower()
+    name_norm = _normalize(account_name)
     first_word = name_lower.split()[0] if name_lower else ""
 
+    # Strategy 1 — account ID
     for chunk in chunks:
-        chunk_lower = chunk.lower()
+        cl = chunk.lower()
         if (
-            f"acct {account_id}" in chunk_lower
-            or f"account {account_id}" in chunk_lower
-            or f"#{account_id}" in chunk_lower
+            f"acct {account_id.lower()}" in cl
+            or f"account {account_id.lower()}" in cl
+            or f"#{account_id.lower()}" in cl
         ):
             return chunk
 
+    # Strategy 2 — exact normalised name anywhere in chunk
     for chunk in chunks:
         if name_lower in chunk.lower():
             return chunk
 
+    # Strategy 3 — first-word substring (long words only)
     if len(first_word) > 4:
         for chunk in chunks:
             if first_word in chunk.lower():
                 return chunk
+
+    # Strategy 4 — fuzzy match on extracted name segment of each chunk's first line.
+    # Uses partial_ratio (not token_sort_ratio) because the account name is a short
+    # string being searched for within the longer normalised segment.
+    first_lines = [_first_line(c) for c in chunks]
+    name_segments = [_normalize(_extract_name_portion(fl)) for fl in first_lines]
+
+    result = process.extractOne(
+        name_norm,
+        name_segments,
+        scorer=fuzz.partial_ratio,
+    )
+    if result and result[1] >= _FUZZY_MATCH_THRESHOLD:
+        matched_idx = result[2]
+        logger.info(
+            "Fuzzy chunk match for '%s' → '%s' (score=%.0f)",
+            account_name,
+            first_lines[matched_idx],
+            result[1],
+        )
+        return chunks[matched_idx]
 
     return None
 

@@ -128,11 +128,14 @@ def run_pipeline(
                 raw_score=score.raw_score,
                 top_signal=score.top_signal,
                 contributing_signals=score.contributing_signals,
+                contributing_signal_weights=score.contributing_signal_weights,
                 explanation="Low risk — no significant signals detected.",
                 recommended_action="Maintain regular check-in cadence.",
                 csm_name=account.csm_name,
                 plan_tier=account.plan_tier,
                 industry=account.industry,
+                nps_verbatim_translated=account.nps.verbatim_translated if account.nps else None,
+                csm_confidence=account.csm.confidence if account.csm else None,
             )
         reports.append(report)
 

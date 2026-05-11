@@ -510,13 +510,95 @@ if page == "🏠 Dashboard":
 
         with right:
             st.markdown(
-                "**Contributing signals**",
-                help="All signals that added to this account's risk score, sorted by weight (highest first). "
-                     "See Signal Reference page for weight values.",
+                "**Signal breakdown**",
+                help="Every signal that fired for this account, sorted by weight contribution. "
+                     "The bar shows each signal's share of the total score.",
             )
-            for i, signal in enumerate(report.contributing_signals):
-                weight_indicator = "🔴" if i == 0 else ("🟡" if i < 3 else "⚪")
-                st.markdown(f"{weight_indicator} {signal}")
+            if report.contributing_signals:
+                total = report.raw_score or 1.0
+                _SOURCE_ICON = {
+                    "Usage": "📈", "usage": "📈",
+                    "P1": "🎫", "ticket": "🎫", "Unresolved": "🎫", "escalated": "🎫",
+                    "NPS": "⭐", "nps": "⭐", "Low NPS": "⭐", "detractor": "⭐",
+                    "Competitor": "🔍",
+                    "SDK": "🔧", "deprecated": "🔧",
+                    "Budget": "💰", "Executive": "👔", "Migration": "🔄",
+                    "churn": "⚠️", "Explicit": "⚠️",
+                    "meeting": "📅",
+                }
+                def _signal_icon(label: str) -> str:
+                    for k, v in _SOURCE_ICON.items():
+                        if k.lower() in label.lower():
+                            return v
+                    return "•"
+
+                breakdown_rows = []
+                for label, w in zip(report.contributing_signals, report.contributing_signal_weights):
+                    breakdown_rows.append({
+                        "Signal": f"{_signal_icon(label)}  {label}",
+                        "pts": w,
+                        "% of score": round(w / total, 3),
+                    })
+                st.dataframe(
+                    pd.DataFrame(breakdown_rows),
+                    hide_index=True,
+                    use_container_width=True,
+                    column_config={
+                        "pts": st.column_config.NumberColumn("pts", format="%.1f",
+                            help="Weight points this signal contributed to the total score."),
+                        "% of score": st.column_config.ProgressColumn(
+                            "% of score", min_value=0, max_value=1, format="%.0%%",
+                            help="This signal's share of the total raw score."),
+                    },
+                )
+            else:
+                st.caption("No significant signals fired.")
+
+            # ── Pipeline transparency panel ────────────────────────────────────
+            st.markdown("")
+            st.markdown(
+                "**Pipeline features used**",
+                help="Which pipeline features contributed to analysing this account.",
+            )
+            features: list[tuple[str, str, str]] = []
+
+            # Always present: deterministic signal computation
+            features.append(("⚡", "Deterministic scoring", "Weighted sum of all fired signals — no LLM involvement in the score"))
+
+            # SDK cross-reference
+            if any("deprecated SDK" in s or "SDK deadline" in s for s in report.contributing_signals):
+                features.append(("🔧", "Changelog × usage cross-reference", "SDK version from usage_metrics.csv matched against engineering changelog deprecation registry"))
+
+            # CSM LLM extraction
+            if report.csm_confidence is not None:
+                conf_pct = int(report.csm_confidence * 100)
+                features.append(("🤖", f"LLM CSM extraction (confidence: {conf_pct}%)",
+                    "Raw call notes parsed by LLM with CoT reasoning → structured risk flags"))
+
+            # NPS translation
+            if report.nps_verbatim_translated:
+                features.append(("🌐", "NPS verbatim translated (non-English → English)",
+                    f'Original: "{report.nps_verbatim_translated[:80]}…"' if len(report.nps_verbatim_translated) > 80
+                    else f'Translated: "{report.nps_verbatim_translated}"'))
+
+            # LLM explanation
+            if report.tier in (RiskTier.HIGH, RiskTier.MEDIUM):
+                features.append(("✍️", "LLM briefing generated", "Score + signals sent to LLM for plain-English explanation and specific recommended action"))
+
+            _F_STYLE = ("background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;"
+                        "padding:8px 12px;margin-bottom:6px;font-size:12px")
+            _F_ICON_CSS = "font-size:16px;margin-right:8px"
+            _F_TITLE_CSS = "font-weight:600;color:#0f172a"
+            _F_DESC_CSS = "color:#64748b;margin-top:2px"
+            for icon, title, desc in features:
+                st.markdown(
+                    f"<div style='{_F_STYLE}'>"
+                    f"<span style='{_F_ICON_CSS}'>{icon}</span>"
+                    f"<span style='{_F_TITLE_CSS}'>{title}</span>"
+                    f"<div style='{_F_DESC_CSS}'>{desc}</div>"
+                    f"</div>",
+                    unsafe_allow_html=True,
+                )
 
     # ── SDK insight panel ──────────────────────────────────────────────────────
     st.markdown("---")

@@ -2,6 +2,9 @@
 
 > A production-grade pipeline that ingests messy multi-source SaaS account data, computes deterministic risk signals, and uses an LLM to generate plain-English renewal risk briefings — so your BizOps team knows which accounts are about to churn before the account team has to ask.
 
+**Demo video:** [link to recording — replace with actual URL]
+**GitHub repository:** [link to GitHub repo — replace with actual URL]
+
 ---
 
 ## What It Does

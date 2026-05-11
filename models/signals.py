@@ -31,6 +31,7 @@ class NpsSignal(BaseModel):
     score: int
     category: str
     verbatim: Optional[str] = None
+    verbatim_translated: Optional[str] = None  # set when original was non-English
     competitor_mentioned: bool
 
 

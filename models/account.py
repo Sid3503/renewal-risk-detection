@@ -36,6 +36,7 @@ class RiskScore(BaseModel):
     raw_score: float
     tier: RiskTier
     contributing_signals: list[str]
+    contributing_signal_weights: list[float]
     top_signal: str
 
 
@@ -49,8 +50,12 @@ class RiskReport(BaseModel):
     raw_score: float
     top_signal: str
     contributing_signals: list[str]
+    contributing_signal_weights: list[float]
     explanation: str
     recommended_action: str
     csm_name: str
     plan_tier: str
     industry: str
+    # Transparency fields — which pipeline features fired for this account
+    nps_verbatim_translated: Optional[str] = None   # English translation when original was non-English
+    csm_confidence: Optional[float] = None          # LLM confidence for CSM signal extraction

@@ -131,11 +131,13 @@ def score_account(account: AccountRecord) -> RiskScore:
     fired_sorted = sorted(fired, key=lambda x: x[1], reverse=True)
     top_signal = fired_sorted[0][0] if fired_sorted else "No significant signals"
     contributing = [label for label, _ in fired_sorted]
+    weights = [w for _, w in fired_sorted]
 
     return RiskScore(
         account_id=account.account_id,
         raw_score=round(score, 2),
         tier=_tier_from_score(score),
         contributing_signals=contributing,
+        contributing_signal_weights=weights,
         top_signal=top_signal,
     )
